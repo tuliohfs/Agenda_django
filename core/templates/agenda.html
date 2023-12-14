@@ -7,7 +7,7 @@
     </a>
     <ul>
         {% for evento in Evento_instance %}
-        <li>{{ evento.titulo }} - {{ evento.get_data_evento }} (<a href="#"> Editar </a>  / <a href="/Agenda/eventos/delete/{{ evento.id }}/"> Excluir </a>) <br></li>
+        <li>{{ evento.titulo }} - {{ evento.get_data_evento }} (<a href="/Agenda/evento/?id={{ evento.id }}"> Editar </a>  / <a href="/Agenda/eventos/delete/{{ evento.id }}/"> Excluir </a>) <br></li>
     {% endfor %}
     </ul>
 {% endblock %}
