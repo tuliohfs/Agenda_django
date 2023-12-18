@@ -1,12 +1,17 @@
 {% extends "model_page.html" %}
 
 {% block content %}
+{% load static %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/evento_style.css' %}">
+</head>
 
 <h2>Evento</h2>
 
 <form action="submit" method="POST">{% csrf_token %}
 
     <label>Título</label>
+    <input type="number" name="id_evento" value="{{ evento.id }}" hidden>
     <br>
     <input type="text" name="titulo" size="19" value="{{ evento.titulo }}">
     <br>
@@ -22,6 +27,5 @@
     <a href="/"><button type="button">Cancelar</button></a>
 
 </form>
-
 
 {% endblock %}

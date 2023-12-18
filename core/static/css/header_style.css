@@ -1,0 +1,40 @@
+/* Adicione essas regras de estilo para o botão de logout */
+.align-right {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.logout-link {
+    background-color: #ff2600; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    padding: 10px 20px; /* Espaçamento interno do botão */
+    border: none; /* Remove a borda do botão */
+    border-radius: 5px; /* Borda arredondada */
+    cursor: pointer; /* Cursor ao passar o mouse sobre o botão */
+    text-decoration: none; /* Remover sublinhado padrão do link */
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.logout-link:hover {
+    text-decoration: underline; /* Adicionar sublinhado ao passar o mouse sobre o link */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo para o corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Estilo para o cabeçalho */
+h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}

@@ -1,13 +1,20 @@
 {% extends "model_page.html" %}
 
 {% block content %}
-    <h2>Agendamentos</h2>
+{% load static %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/agenda_style.css' %}">
+</head>
+
+<h2>Agendamentos</h2>
+<div class="button-container">
     <a href="evento/">
         <button type="button">Novo evento</button>
     </a>
-    <ul>
-        {% for evento in Evento_instance %}
-        <li>{{ evento.titulo }} - {{ evento.get_data_evento }} (<a href="/Agenda/evento/?id={{ evento.id }}"> Editar </a>  / <a href="/Agenda/eventos/delete/{{ evento.id }}/"> Excluir </a>) <br></li>
+</div>
+<ul>
+    {% for evento in Evento_instance %}
+    <li>{{ evento.titulo }} - {{ evento.get_data_evento }} (<a href="/Agenda/evento/?id={{ evento.id }}"> Editar </a>  / <a href="/Agenda/eventos/delete/{{ evento.id }}/"> Excluir </a>) <br></li>
     {% endfor %}
-    </ul>
+</ul>
 {% endblock %}
