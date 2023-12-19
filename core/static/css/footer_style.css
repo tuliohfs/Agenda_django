@@ -1,11 +1,25 @@
 /* Estilo para o rodapé */
 footer {
-    background-color: #f4f4f4; /* Adiciona um fundo leve ao rodapé */
-    padding: 10px 0; /* Adiciona espaço interno ao rodapé */
+    background-color: #2c3e50; /* Cor de fundo mais escura */
+    padding: 20px 0; /* Adiciona espaço interno ao rodapé */
     text-align: center;
+    color: #ecf0f1; /* Cor do texto no rodapé */
+    position: fixed; /* Fixa o rodapé na parte inferior da página */
+    width: 100%;
+    bottom: 0;
 }
 
 p {
     margin: 0; /* Remove a margem padrão do parágrafo */
-    color: #777; /* Cor cinza para o texto do rodapé */
+}
+
+/* Adiciona algum espaçamento ao redor do texto */
+footer p {
+    margin: 10px;
+}
+
+/* Adiciona um efeito de hover sutil ao texto do rodapé */
+footer p:hover {
+    color: #bdc3c7; /* Cor do texto do rodapé ao passar o mouse */
+    transition: color 0.3s;
 }

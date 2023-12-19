@@ -1,40 +1,36 @@
-/* Adicione essas regras de estilo para o botão de logout */
-.align-right {
-    text-align: right;
-    margin-bottom: 10px;
-}
-
-.logout-link {
-    background-color: #ff2600; /* Cor de fundo do botão */
-    color: #fff; /* Cor do texto do botão */
-    padding: 10px 20px; /* Espaçamento interno do botão */
-    border: none; /* Remove a borda do botão */
-    border-radius: 5px; /* Borda arredondada */
-    cursor: pointer; /* Cursor ao passar o mouse sobre o botão */
-    text-decoration: none; /* Remover sublinhado padrão do link */
-    margin-top: 10px;
-    margin-right: 10px;
-}
-
-.logout-link:hover {
-    text-decoration: underline; /* Adicionar sublinhado ao passar o mouse sobre o link */
-}
-
-* {
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilo para o corpo da página */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+h1 {
+    color: #3498db; /* Azul mais claro */
+    text-align: center;
+    margin: 20px;
 }
 
-/* Estilo para o cabeçalho */
-h1 {
-    color: #333;
-    text-align: center;
-    margin-bottom: 20px;
+/* Estilo para o botão de logout */
+.align-right {
+    text-align: right;
+    margin: 10px;
+}
+
+.logout-link {
+    background-color: #e74c3c; /* Vermelho */
+    color: #fff !important; /* Forçando a cor do texto para branco */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.logout-link:hover {
+    background-color: #c0392b; /* Vermelho mais escuro no hover */
 }

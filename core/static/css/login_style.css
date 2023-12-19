@@ -7,13 +7,18 @@
 
 /* Estilo para o corpo da página */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
 /* Estilo para o cabeçalho */
 h1 {
-    color: #333;
+    color: #3498db; /* Azul mais claro */
     text-align: center;
     margin-bottom: 20px;
 }
@@ -21,25 +26,29 @@ h1 {
 /* Estilo para o formulário */
 form {
     max-width: 400px;
-    margin: 0 auto;
+    width: 100%;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Garante que padding não aumente a largura do formulário */
+    text-align: center; /* Centraliza o conteúdo no formulário */
+    margin: 0 auto; /* Centraliza o formulário */
 }
 
 /* Estilo para os rótulos */
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     font-weight: bold;
+    color: #333;
 }
 
 /* Estilo para os campos de entrada */
 input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
+    width: calc(100% - 20px); /* Leva em consideração o padding do formulário */
+    padding: 10px;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
@@ -47,13 +56,20 @@ input {
 
 /* Estilo para o botão de envio */
 button {
-    background-color: #4caf50;
+    background-color: #3498db; /* Azul */
     color: #fff;
-    padding: 10px 15px;
+    padding: 12px 15px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    width: 100%; /* Faz o botão ocupar toda a largura do contêiner */
+    width: 100%;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+/* Efeito de hover no botão de envio */
+button:hover {
+    background-color: #2980b9; /* Azul mais escuro */
+    transform: scale(1.05); /* Efeito de escala no hover */
 }
 
 /* Estilo para as mensagens de erro/sucesso */
@@ -64,5 +80,5 @@ div {
 
 /* Estilo para as mensagens de erro/sucesso */
 strong {
-    color: #f00; /* Cor vermelha para mensagens de erro */
+    color: #e74c3c; /* Vermelho para mensagens de erro */
 }

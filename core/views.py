@@ -3,17 +3,18 @@ from core.models import Evento
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+from datetime import datetime, timedelta
+from django.http.response import Http404
+import json
+from django.http import JsonResponse
 
 @login_required(login_url='/login/')
 def lista_eventos(request):
-    
     user = request.user
     usuario = request.user
-    # 'Evento.objects.all()' está pegando todos os objetos do modelo Evento.
-    evento_instance = Evento.objects.filter(usuario=usuario)
-    # 'dados' é um dicionário que contém os dados que você quer passar para o template.
+    data_atual = datetime.now() - timedelta(hours=1)
+    evento_instance = Evento.objects.filter(usuario=usuario, data_evento__gt=data_atual)
     dados = {'Evento_instance': evento_instance}
-    # 'render' está renderizando o template 'agenda.html' e passando o dicionário 'dados' para ele.
     return render(request, 'agenda.html', dados)
 
 def login_user(request):
@@ -53,14 +54,28 @@ def submit_evento(request):
         data_evento = request.POST.get('data_evento')
         descricao = request.POST.get('descricao')
         usuario = request.user
-        id_evento = request
-        Evento.objects.create(titulo=titulo, data_evento=data_evento, descricao=descricao, usuario=usuario)
+        id_evento = request.POST.get('id_evento')
+        if id_evento:
+            Evento.objects.filter(id=id_evento).update(titulo=titulo, data_evento=data_evento, descricao=descricao)
+        else:
+            Evento.objects.create(titulo=titulo, data_evento=data_evento, descricao=descricao, usuario=usuario)
     return redirect('/')
 
 @login_required(login_url='/login/')
 def delete_evento(request, id_evento):
     usuario = request.user
-    evento = Evento.objects.get(id=id_evento)
+    try:
+        evento = Evento.objects.get(id=id_evento)
+    except Exception:
+        raise Http404()
     if usuario == evento.usuario:
         evento.delete()
+    else:
+        raise Http404()
     return redirect('/')
+
+@login_required(login_url='/login/')
+def json_lista_eventos(request):
+    usuario = request.user
+    evento_instance = Evento.objects.filter(usuario=usuario).values('id', 'titulo')
+    return JsonResponse(list(evento_instance), safe=False)

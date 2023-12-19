@@ -14,7 +14,11 @@
 </div>
 <ul>
     {% for evento in Evento_instance %}
-    <li>{{ evento.titulo }} - {{ evento.get_data_evento }} (<a href="/Agenda/evento/?id={{ evento.id }}"> Editar </a>  / <a href="/Agenda/eventos/delete/{{ evento.id }}/"> Excluir </a>) <br></li>
+    <li>
+        <div class="{% if evento.get_evento_atrasado %}evento-atrasado{% endif %}">
+            {{ evento.titulo }} - {{ evento.get_data_evento }} (<a href="/Agenda/evento/?id={{ evento.id }}"> Editar </a>  / <a href="/Agenda/eventos/delete/{{ evento.id }}/"> Excluir </a>) <br>
+        </div>
+    </li>
     {% endfor %}
 </ul>
 {% endblock %}
