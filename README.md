@@ -24,3 +24,9 @@ Antes de executar a aplicação, certifique-se de ter o ambiente configurado cor
 
    ```bash
    git clone https://github.com/tuliohfs/agenda_django.git
+
+2. Execute as migrações para configurar o banco de dados:
+
+ ```bash
+python manage.py migrate
+
