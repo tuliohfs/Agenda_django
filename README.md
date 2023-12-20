@@ -27,6 +27,10 @@ Antes de executar a aplicação, certifique-se de ter o ambiente configurado cor
 
 2. Execute as migrações para configurar o banco de dados:
 
- ```bash
-python manage.py migrate
+   ```bash
+   python manage.py migrate
 
+3. Inicie o servidor de desenvolvimento:
+
+   ```bash
+   python manage.py runserver
