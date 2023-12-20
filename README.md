@@ -35,7 +35,7 @@ Antes de executar a aplicação, certifique-se de ter o ambiente configurado cor
    ```bash
    python manage.py runserver
 
-4. Acesse a aplicação em `(http://localhost:8000/Agenda/)http://localhost:8000/Agenda/`
+4. Acesse a aplicação em `http://localhost:8000/Agenda/`
 
 ## Rotas Principais
 - **/Agenda/:** Lista de eventos futuros.
